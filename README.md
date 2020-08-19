@@ -7,7 +7,7 @@ in loading...
 
 # How to execute a project
 
-first 
+first
 ```
 npm install
 ```
@@ -15,4 +15,18 @@ npm install
 second 
 ```
 nodemon .\app.js localhost 3000
+```
+
+# how to use API
+
+endpoint
+```
+localhost:3000/plate/sinesp
+```
+
+body
+```
+{
+    "plate": "hbm6603"
+}
 ```
