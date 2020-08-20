@@ -30,10 +30,10 @@ router.post('/', createAccountLimiter, async(req, res) =>
                 let response = await getPlate(plate)
                 res.end(JSON.stringify({'code': 500, 'data' : response}));
             } catch (error) {
-                res.end(JSON.stringify({'code': 500, 'error' : 'Não foi possível obter as informações, tente novamente', 'plate' : req.params.key, 'infos': error}));
+                res.end(JSON.stringify({'code': 500, 'error' : 'Sem informações, verifique se é uma placa válida', 'plate': plate, 'infos':'null'}));
             }
         }else{
-            res.end(JSON.stringify({'code': 500, 'error' : 'Por favor, insira uma placa válida', 'plate':'null','infos':'null'}));
+            res.end(JSON.stringify({'code': 500, 'error' : 'Por favor, insira uma placa válida', 'plate':'null', 'infos':'null'}));
         }
     }else{
         res.end(JSON.stringify({'code': 500, 'error' : 'Solicite a chave da API'}));
