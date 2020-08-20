@@ -15,7 +15,7 @@ async function getPlate(plate) {
 }
 
 
-router.get('/', createAccountLimiter, async(req, res) => 
+router.get('/', async(req, res) => 
 {
     res.end("don\'t acess informations in method GET");
 })
