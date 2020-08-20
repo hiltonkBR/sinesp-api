@@ -14,6 +14,14 @@ async function getPlate(plate) {
     return await sinespApi.search(plate);
 }
 
+
+router.get('/', createAccountLimiter, async(req, res) => 
+{
+
+    res.end(JSON.stringify({'error' : 'don\'t acess informations in method GET'}));
+    
+})
+
 router.post('/', createAccountLimiter, async(req, res) => 
 {
 
