@@ -28,7 +28,7 @@ router.post('/', createAccountLimiter, async(req, res) =>
         if(typeof(plate) !== 'undefined'){
             try {
                 let response = await getPlate(plate)
-                res.end(JSON.stringify({'code': 500, 'data' : response}));
+                res.end(JSON.stringify({'code': 200, 'data' : response}));
             } catch (error) {
                 res.end(JSON.stringify({'code': 500, 'error' : 'Sem informações, verifique se é uma placa válida', 'plate': plate, 'infos':'null'}));
             }
@@ -36,7 +36,7 @@ router.post('/', createAccountLimiter, async(req, res) =>
             res.end(JSON.stringify({'code': 500, 'error' : 'Por favor, insira uma placa válida', 'plate':'null', 'infos':'null'}));
         }
     }else{
-        res.end(JSON.stringify({'code': 500, 'error' : 'Solicite a chave da API'}));
+        res.end(JSON.stringify({'code': 403, 'error' : 'Solicite a chave da API'}));
     }
     
 })
