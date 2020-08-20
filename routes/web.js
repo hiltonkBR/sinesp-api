@@ -27,7 +27,7 @@ router.post('/', createAccountLimiter, async(req, res) =>
         try {
 
             let response = await getPlate(plate)
-            res.end(JSON.stringify({'code': 500, 'content' : response}));
+            res.end(JSON.stringify({'code': 500, 'data' : response}));
         
         } catch (error) {
             res.end(JSON.stringify({'code': 500, 'error' : 'Não foi possível obter as informações, tente novamente', 'plate' : req.params.key, 'infos': error}));
