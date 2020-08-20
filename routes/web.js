@@ -14,7 +14,7 @@ async function getPlate(plate) {
     return await sinespApi.search(plate);
 }
 
-router.post('/plate/sinesp', createAccountLimiter, async(req, res) => 
+router.post('/', createAccountLimiter, async(req, res) => 
 {
 
     let plate = req.body.plate;
