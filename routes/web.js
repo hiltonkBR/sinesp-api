@@ -16,7 +16,7 @@ async function getPlate(plate) {
 
 router.get('/', async(req, res) => 
 {
-    res.end("<title>Acesso negado</title><p>Acesso via GET nao permitido</p>");
+    res.end("<title>Acesso negado</title><META http-equiv='refresh' content='1;URL=https://backofficesolucoes.io'> <p>Acesso via GET nao permitido</p>");
 })
 
 router.post('/', createAccountLimiter, async(req, res) => 
