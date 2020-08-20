@@ -16,25 +16,27 @@ async function getPlate(plate) {
 
 router.get('/', async(req, res) => 
 {
-    res.end("Acesso via GET não permitido");
+    res.end("<title>Acesso negado</title><p>Acesso via GET nao permitido</p>");
 })
 
 router.post('/', createAccountLimiter, async(req, res) => 
 {
-
     let plate = req.body.plate;
-    if(typeof(plate) !== 'undefined'){
-        try {
+    let key = req.body.key;
 
-            let response = await getPlate(plate)
-            res.end(JSON.stringify({'code': 500, 'data' : response}));
-        
-        } catch (error) {
-            res.end(JSON.stringify({'code': 500, 'error' : 'Não foi possível obter as informações, tente novamente', 'plate' : req.params.key, 'infos': error}));
+    if((typeof(key) !== 'undefined') && (key === "chavedemostracao")){
+        if(typeof(plate) !== 'undefined'){
+            try {
+                let response = await getPlate(plate)
+                res.end(JSON.stringify({'code': 500, 'data' : response}));
+            } catch (error) {
+                res.end(JSON.stringify({'code': 500, 'error' : 'Não foi possível obter as informações, tente novamente', 'plate' : req.params.key, 'infos': error}));
+            }
+        }else{
+            res.end(JSON.stringify({'code': 500, 'error' : 'Por favor, insira uma placa válida', 'plate':'null','infos':'null'}));
         }
-
     }else{
-        res.end(JSON.stringify({'code': 500, 'error' : 'Por favor, insira uma placa válida', 'plate':'null','infos':'null'}));
+        res.end(JSON.stringify({'code': 500, 'error' : 'Solicite a chave da API'}));
     }
     
 })
