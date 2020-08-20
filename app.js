@@ -1,5 +1,5 @@
 // set up ======================================================================
-const hostname = 'localhost';
+const hostname = '127.0.0.1';
 const port = 3000;
 const express = require('express')
 const bodyParser = require('body-parser');
