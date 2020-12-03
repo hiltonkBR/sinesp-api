@@ -1,7 +1,7 @@
-# Sinesp OpenSource API v1
+##### Sinesp OpenSource API v1
 Is a simple API develop in NODE JS, to integration in SINESP for free user :)
 
-# How to execute a project
+##### How to execute a project
 
 first
 ```
@@ -32,8 +32,9 @@ json```
 }
 ```
 
-Response:
+Response SUCCESS:
 
+json```
 {
    "code":200,
    "data":{
@@ -56,3 +57,25 @@ Response:
       "uf":"MG"
    }
 }
+```
+
+#### Responses ERROR:
+
+Placa errada:
+
+json```
+{
+   "code":500,
+   "error":"Sem informações, verifique se é uma placa válida",
+   "plate":"",
+   "infos":"null"
+}
+```
+
+Sem chave
+json```
+{
+   "code":403,
+   "error":"Solicite a chave da API"
+}
+```
