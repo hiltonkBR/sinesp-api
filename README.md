@@ -27,8 +27,8 @@ Body:
 
 json```
 {
-  "key": "chavedemostracao",
-  "plate": "hbm6603"
+   "key":"chavedemostracao",
+   "plate":"hbm6603"
 }
 ```
 
