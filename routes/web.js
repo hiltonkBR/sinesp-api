@@ -1,25 +1,20 @@
 const express = require('express')
-const sinespApi = require('sinesp-api');
-const rateLimit = require("express-rate-limit");
-const router = express.Router();
+const sinespApi = require('sinesp-api')
+const rateLimit = require("express-rate-limit")
 
-const createAccountLimiter = rateLimit({
-    windowMs: 1 * 60 * 1000, // 1 hour window
-    max: 5, // start blocking after 5 requests
-    message: JSON.stringify({'code': 500, 'error' : 'Aguarde um momento, tente pesquisar novamente após 1 minuto...', 'infos': 'null'})
-});
+const app = express()
+const cors = require('cors')
 
 async function getPlate(plate) {
     return await sinespApi.search(plate);
 }
 
-
-router.get('/', async(req, res) => 
+app.get('/', cors(), async(req, res) => 
 {
-    res.end("<title>Acesso negado</title><META http-equiv='refresh' content='1;URL=https://backofficesolucoes.io'> <p>Acesso via GET nao permitido</p>");
+    res.json({'code': 500, 'error' : 'Acesso via GET nao permitido'});
 })
 
-router.post('/', createAccountLimiter, async(req, res) => 
+app.post('/', cors(), async(req, res) => 
 {
     let plate = req.body.plate;
     let key = req.body.key;
@@ -28,17 +23,17 @@ router.post('/', createAccountLimiter, async(req, res) =>
         if(typeof(plate) !== 'undefined'){
             try {
                 let response = await getPlate(plate)
-                res.end(JSON.stringify({'code': 200, 'data' : response}));
+                res.json({'code': 200, 'data' : response});
             } catch (error) {
-                res.end(JSON.stringify({'code': 500, 'error' : 'Sem informações, verifique se é uma placa válida', 'plate': plate, 'infos':'null'}));
+                res.json({'code': 500, 'error' : 'Sem informações, verifique se é uma placa válida', 'plate': plate, 'infos':'null'});
             }
         }else{
-            res.end(JSON.stringify({'code': 500, 'error' : 'Por favor, insira uma placa válida', 'plate':'null', 'infos':'null'}));
+            res.json({'code': 500, 'error' : 'Por favor, insira uma placa válida', 'plate':'null', 'infos':'null'});
         }
     }else{
-        res.end(JSON.stringify({'code': 403, 'error' : 'Solicite a chave da API'}));
+        res.json({'code': 403, 'error' : 'Solicite a chave da API'});
     }
     
 })
 
-module.exports = router;
+module.exports = app;
