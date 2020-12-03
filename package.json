@@ -1,10 +1,11 @@
 {
-    "name": "sinesp-api",
+    "name": "Sinesp-Api OpenSource",
     "version": "1.0.0",
-    "description": "sinesp",
+    "description": "Sinesp OpenSource by BackOffice Soluções",
     "main": "index.js",
     "dependencies": {
         "body-parser": "^1.19.0",
+        "cors": "^2.8.5",
         "express": "^4.17.1",
         "express-csp-header": "^4.0.0",
         "express-rate-limit": "^5.1.3",
