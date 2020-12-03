@@ -31,6 +31,32 @@ Body:
    "plate":"hbm6603"
 }
 ```
+Response ALERT:
+
+```json
+{
+   "code":200,
+   "data":{
+      "ano":"1978",
+      "anoModelo":"1978",
+      "chassi":"*****09660",
+      "codigoRetorno":"0",
+      "codigoSituacao":"1",
+      "cor":"Branca",
+      "data":"2020-10-29T13:00:39.948-03:00",
+      "dataAtualizacaoAlarme":"",
+      "dataAtualizacaoCaracteristicasVeiculo":"",
+      "dataAtualizacaoRouboFurto":"",
+      "marca":"VW/FUSCA 1300 L",
+      "mensagemRetorno":"Sem erros.",
+      "modelo":"VW/FUSCA 1300 L",
+      "municipio":"PINDAMONHANGABA",
+      "placa":"BHS1192",
+      "situacao":"ROUBO / FURTO",
+      "uf":"SP"
+   }
+}
+```
 
 Response SUCCESS:
 
