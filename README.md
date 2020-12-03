@@ -10,7 +10,7 @@ npm install
 
 Second 
 ```
-nodemon .\app.js localhost 3000
+node ./app.js localhost 3000
 ```
 
 ### How to teste API
