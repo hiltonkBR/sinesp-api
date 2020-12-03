@@ -105,3 +105,29 @@ No key
    "error":"Solicite a chave da API"
 }
 ```
+### How to consume API in $.POST Jquery
+
+```javascript
+function getSinespPlate(platesearch){
+
+    if(platesearch != ''){
+        $.post({
+            method: 'POST',
+            url: 'https://sinesp.backofficesolucoes.io',
+            data: {'key': 'chavedemostracao', 'plate': platesearch},
+            success: function(data, status, xhr) {
+                resultado = JSON.parse(data);
+                if (resultado.code === 200) {
+                    console.log(resultado?.data)
+                }else{
+                    error = JSON.parse(data);
+                    console.log(resultado?.data)
+                }
+            },
+            error: function(data) {
+                console.log(data.error)
+            }
+        })
+    }
+}
+```
