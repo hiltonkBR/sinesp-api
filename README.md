@@ -13,7 +13,7 @@ second
 nodemon .\app.js localhost 3000
 ```
 
-# how to use API
+##### how to use API
 
 Endpoint demonstração:
 
