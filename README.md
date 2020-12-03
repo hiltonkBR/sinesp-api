@@ -25,7 +25,7 @@ http://sinesp.backofficesolucoes.io/
 
 Body:
 
-json```
+```json
 {
    "key":"chavedemostracao",
    "plate":"hbm6603"
