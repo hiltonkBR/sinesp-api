@@ -1,9 +1,5 @@
-# Sinesp Api v1
-Is a simple API develop in NODE JS, to integration in SINESP to BackOffice CRM
-
-# How to install dependencies
-
-in loading...
+# Sinesp OpenSource API v1
+Is a simple API develop in NODE JS, to integration in SINESP for free user :)
 
 # How to execute a project
 
@@ -19,14 +15,40 @@ nodemon .\app.js localhost 3000
 
 # how to use API
 
-endpoint
+Endpoint:
 ```
 localhost:3000/plate/sinesp
 ```
 
-body
-```
+Body:
+json```
 {
-    "plate": "hbm6603"
+  "key": "chavedemostracao",
+  "plate": "hbm6603"
 }
 ```
+
+Response:
+
+{
+   "code":200,
+   "data":{
+      "ano":"2003",
+      "anoModelo":"2004",
+      "chassi":"*****80726",
+      "codigoRetorno":"0",
+      "codigoSituacao":"0",
+      "cor":"Prata",
+      "data":"23/05/2019 às 17:25:02",
+      "dataAtualizacaoAlarme":null,
+      "dataAtualizacaoCaracteristicasVeiculo":null,
+      "dataAtualizacaoRouboFurto":null,
+      "marca":"FIAT/PALIO FIRE",
+      "mensagemRetorno":"Sem erros.",
+      "modelo":"FIAT/PALIO FIRE",
+      "municipio":"RIBEIRAO DAS NEVES",
+      "placa":"HBM6603",
+      "situacao":"Sem restrição",
+      "uf":"MG"
+   }
+}
