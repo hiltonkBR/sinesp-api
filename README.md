@@ -15,12 +15,16 @@ nodemon .\app.js localhost 3000
 
 # how to use API
 
-Endpoint:
+Endpoint demonstração:
+
+Request POST
+
 ```
-localhost:3000/plate/sinesp
+http://sinesp.backofficesolucoes.io/
 ```
 
 Body:
+
 json```
 {
   "key": "chavedemostracao",
