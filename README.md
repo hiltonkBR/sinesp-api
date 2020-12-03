@@ -13,7 +13,7 @@ Second
 nodemon .\app.js localhost 3000
 ```
 
-### how to teste API
+### How to teste API
 
 Endpoint demo:
 
